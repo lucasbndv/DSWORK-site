@@ -1,0 +1,21 @@
+.news_box {
+  display: flex;
+  margin-bottom: 2em;
+}
+
+hr {
+  margin-bottom: 2em;
+}
+
+.news_box img {
+  width: 320px;
+  height: 250px;
+  margin-right: 5em;
+}
+
+@media only screen and (max-width: 768px) {
+  .news_box img {
+    width: 10em;
+    height: 10em;
+  }
+}
