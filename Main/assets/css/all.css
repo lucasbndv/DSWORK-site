@@ -1,0 +1,25 @@
+#header {
+}
+.links {
+  width: 600px;
+  display: flex;
+  margin: 0px;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.links a {
+  color: white;
+  text-decoration: none;
+}
+.links li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  list-style-type: none;
+}
+
+.links a:hover {
+  color: red;
+}
