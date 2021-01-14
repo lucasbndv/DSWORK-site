@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="assets/css/all.css" />
     <link rel="stylesheet" href="assets/css/admin.css" />
+    
   </head>
 
   <body class="is-preload">
@@ -127,6 +128,6 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
-    <script src="./assets/js/admin.js"></script>
+    <script src="assets/js/admin2.js"></script>
   </body>
 </html>

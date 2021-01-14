@@ -51,7 +51,10 @@
     <section id="main" class="wrapper">
       <div class="inner">
         <div class="content">
-          <h2>Adicionar Notícias</h2>
+          <header>
+            <h2>Adicionar Notícias</h2>
+            <p id="ans"><?php echo $db_ans;?></p>
+          </header>
           <form action="./assets/php/newsRegister.php" method="POST" enctype="multipart/form-data">
             <label for="title">Título</label>
             <input type="text" name="title" />
@@ -61,7 +64,7 @@
             <input type="file" name="image" />
             <input type="submit" value="Enviar" />
           </form>
-          <?php echo $db_ans;?>
+          
         </div>
       </div>
     </section>

@@ -21,3 +21,8 @@
 .links a:hover {
   color: #ce1b28;
 }
+
+#ans {
+  color: red;
+  font-size: 1.5em;
+}

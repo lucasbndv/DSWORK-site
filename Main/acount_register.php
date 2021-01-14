@@ -5,8 +5,16 @@
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 -->
 <html>
+  <?php 
+  include_once "./assets/php/session.php";
+  try{
+    $db_ans = $_GET['ans'];
+  }catch(Exception $e){
+    $db_ans = " ";
+  }
+  ?>
   <head>
-    <title>Generic Page - Industrious by TEMPLATED</title>
+    <title>Registro de Conta - DSWORK LTDA</title>
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -16,6 +24,7 @@
     <meta name="keywords" content="" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="assets/css/all.css" />
+    <link rel="stylesheet" href="assets/css/acount_register.css" />
   </head>
 
   <body class="is-preload">
@@ -35,13 +44,25 @@
 
     <!-- Heading -->
     <div id="heading">
-      <h1>Generic Page</h1>
+      <h1>Registro de Contas</h1>
     </div>
 
     <!-- Main -->
     <section id="main" class="wrapper">
       <div class="inner">
-        <div class="content"></div>
+        <div class="content">
+        <header>
+            <h2>Adicionar Notícias</h2>
+            <p id="ans"><?php echo $db_ans;?></p>
+          </header>
+          <form action="./assets/php/userRegister.php" method="POST" enctype="multipart/form-data">
+            <label for="user">Nome</label>
+            <input type="text" name="user" />
+            <label for="password">Senha</label>
+            <input type="password" name="password">
+            <input type="submit" value="Cadastrar" id="bt"/>
+          </form>
+        </div>
       </div>
     </section>
 

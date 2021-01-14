@@ -34,7 +34,7 @@ if($resultCheck){
     }
 
     else{
-        header("location: ../../login.php");
+        header("location: ../../login.php?ans=Usuário ou senha incorreta");
     }
 
 }

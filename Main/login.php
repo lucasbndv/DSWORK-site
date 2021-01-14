@@ -6,7 +6,15 @@
 -->
 <html>
   <head>
-    <title>Generic Page - Industrious by TEMPLATED</title>
+  <?php 
+  try{
+    $db_ans = $_GET['ans'];
+  }
+  catch(Exception $e){
+    $db_ans = " ";
+  }
+  ?>
+    <title>Login - DSWORK LTDA</title>
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -43,8 +51,11 @@
     <section id="main" class="wrapper">
       <div class="inner">
         <div class="content">
-          <form action="./assets/php/validaLogin.php" id="login_form" method="POST">
-            <h2>Login</h2>
+          <form action="./assets/php/loginValidator.php" id="login_form" method="POST">
+            <header>
+              <h2>Login</h2>
+              <p id="ans"><?php echo $db_ans;?></p>
+            </header>
             <label for="user"> Usuário </label>
             <input type="text" name="user" />
             <label for="password">Senha</label>
