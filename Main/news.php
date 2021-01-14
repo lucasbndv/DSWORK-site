@@ -5,8 +5,11 @@
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 -->
 <html>
+<?php
+   include_once "./assets/php/connectDB.php" 
+ ?>
   <head>
-    <title>DS WORK LTDA - Contato</title>
+    <title>DS WORK LTDA - Notícias</title>
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -15,7 +18,7 @@
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet" href="assets/css/contact.css" />
+    <link rel="stylesheet" href="assets/css/news.css" />
     <link rel="stylesheet" href="assets/css/all.css" />
   </head>
 
@@ -27,56 +30,43 @@
       <nav id="nav_menu">
         <ul class="links">
           <li><a href="index.html">Home</a></li>
-          <li><a href="news.php">Notícias</a></li>
+          <li><a href="news.html" style="color: #ce1b28">Notícias</a></li>
           <li><a href="client_area.html">Área do Cliente</a></li>
-          <li><a href="contato.html" style="color: #ce1b28">Contato</a></li>
+          <li><a href="contato.html">Contato</a></li>
         </ul>
       </nav>
     </header>
 
     <!-- Heading -->
     <div id="heading">
-      <h1>Contato</h1>
+      <h1>Notícias</h1>
     </div>
 
     <!-- Main -->
     <section id="main" class="wrapper">
       <div class="inner">
         <div class="content">
-          <form action="mailto:lucasbndv@gmail.com" method="GET" id="form" enctype=”multipart/form-data”>
-            <h2>Fale conosco</h2>
-            <label for="name">Nome</label>
-            <input type="text" name="name" size="40" />
-            <label for="email">Email</label>
-            <input type="email" name="email" size="40" />
-            <label for="subject">Assunto</label>
-            <input type="text" name="subject" size="40" />
-            <label for="message">Mensagem</label>
-            <textarea cols="40" rows="10" name="body"></textarea>
-            <input type="submit" value=" Enviar " class="primary" />
-          </form>
+        <?php
+        $sql = "SELECT * FROM noticias ORDER BY `id` DESC LIMIT 5;";
+        $result = mysqli_query($con,$sql);
+        $resultCheck = mysqli_num_rows($result);
+        
+        if($resultCheck){
+          while ($row = mysqli_fetch_assoc($result)){
+              $title = $row['titulo'];
+              $body = $row['corpo'];
+              $img = $row['imagem'];
 
-          <div class="contact_info">
-            <h2>Informações</h2>
-            <p>info@dswork.com.br - <strong>Administração Geral</strong></p>
-            <p>comercial@dswork.com.br - <strong>Comercial</strong></p>
-            <p>condominios@dswork.com.br - <strong>Condomínio</strong></p>
-            <p><strong>Telefone(1):</strong>(21) 2581-7330</p>
-            <p><strong>Telefone(2):</strong>(21) 2143-9605</p>
-            <p><strong>Telefone(3):</strong>(21) 3880-2926</p>
-            <p>
-              <strong>Localização:</strong>Rua Dias da Cruz, 47 - 207, Meier -
-              RJ - Rio de Janeiro.
-            </p>
-            <iframe
-              id="map"
-              frameborder="0"
-              scrolling="no"
-              marginheight="0"
-              marginwidth="0"
-              src="http://maps.google.com.br/maps?f=q&amp;source=s_q&amp;hl=pt-BR&amp;geocode=&amp;q=+Rua+Dias+da+Cruz,+47&amp;aq=&amp;sll=-22.066441,-42.924029&amp;sspn=3.980356,7.498169&amp;ie=UTF8&amp;hq=&amp;hnear=R.+Dias+da+Cruz,+47+-+M%C3%A9ier,+Rio+de+Janeiro,+20720-010&amp;t=m&amp;ll=-22.902022,-43.279127&amp;spn=0.002866,0.004603&amp;z=17&amp;output=embed"
-            ></iframe>
-          </div>
+              echo "<div class = news_box>";
+              echo '<img src="./images/'.$img.'" width = "100" height = "100"/> ';
+              echo "<div class = news_text>";
+              echo '<h2>'.$title.'</h2>';
+              echo '<p>'.$body.'</p>';
+              echo '</div> </div>';
+              echo '<hr width="100%" />';
+          }
+        }
+?>
         </div>
       </div>
     </section>
