@@ -37,7 +37,7 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="news.php">Notícias</a></li>
           <li><a href="client_area.html">Área do Cliente</a></li>
-          <li><a href="contact.php" style="color: #ce1b28">Contato</a></li>
+          <li><a href="contact.php" style="color: #5674b6">Contato</a></li>
         </ul>
       </nav>
     </header>
