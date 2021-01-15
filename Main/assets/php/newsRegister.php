@@ -20,11 +20,11 @@ if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
 
 if($resultcheck == 1){
    $db_ans = "Notícia adicionada com sucesso";
-   header('location:../../news_register.php?ans='.$db_ans);
+   header('location:../../news_register.php?ans='.$db_ans.'&style=green;');
 }
 else{
     $db_ans = "Erro ao adicionar notícia";
-    header('location:../../news_register.php?ans='.$db_ans);
+    header('location:../../news_register.php?ans='.$db_ans.'&style=red;');
 }
 
 ?>

@@ -5,7 +5,7 @@
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 -->
 <html>
-    
+  <?php include_once "./assets/php/session.php"?>
   <head>
     <title>Generic Page - Industrious by TEMPLATED</title>
     <meta charset="utf-8" />
@@ -29,9 +29,9 @@
       <nav id="nav_menu">
         <ul class="links">
           <li><a href="index.html">Home</a></li>
-          <li><a href="news.html">Notícias</a></li>
-          <li><a href="client_area.html">Área do Cliente</a></li>
-          <li><a href="contato.html">Contato</a></li>
+          <li><a href="news.php">Notícias</a></li>
+          <li><a href="client_area.html" >Área do Cliente</a></li>
+          <li><a href="contact.php">Contato</a></li>
         </ul>
       </nav>
     </header>
@@ -97,9 +97,9 @@
             <h4>Seções do site</h4>
             <ul class="alt">
               <li><a href="./index.html">Home</a></li>
-              <li><a href="./news.html">Notícias</a></li>
+              <li><a href="./news.php">Notícias</a></li>
               <li><a href="./client_area.html">Área do Cliente</a></li>
-              <li><a href="./contato.html">Contato</a></li>
+              <li><a href="./contact.php">Contato</a></li>
             </ul>
           </section>
           <section>
@@ -117,7 +117,7 @@
         <div class="copyright">
           &copy; 2021 DS WORK LTDA. Photos
           <a href="https://unsplash.co">Unsplash</a>, Video
-          <a href="https://coverr.co">Coverr</a>.
+          <a href="https://coverr.co">Coverr</a>, Template by templated.co.
         </div>
       </div>
     </footer>

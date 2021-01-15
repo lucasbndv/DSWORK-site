@@ -8,9 +8,11 @@
   <?php 
   include_once "./assets/php/session.php";
   try{
-    $db_ans = $_GET['ans'];
+    $db_ans = @$_GET['ans'];
+    $style = @$_GET['style'];
   }catch(Exception $e){
     $db_ans = " ";
+    $style = "auto;";
   }
   ?>
   <head>
@@ -35,9 +37,9 @@
       <nav id="nav_menu">
         <ul class="links">
           <li><a href="index.html">Home</a></li>
-          <li><a href="news.html">Notícias</a></li>
-          <li><a href="client_area.html">Área do Cliente</a></li>
-          <li><a href="contato.html">Contato</a></li>
+          <li><a href="news.php">Notícias</a></li>
+          <li><a href="client_area.html" >Área do Cliente</a></li>
+          <li><a href="contact.php">Contato</a></li>
         </ul>
       </nav>
     </header>
@@ -53,7 +55,7 @@
         <div class="content">
         <header>
             <h2>Adicionar Notícias</h2>
-            <p id="ans"><?php echo $db_ans;?></p>
+            <p id="ans" style='color: <?php echo $style;?>'><?php echo $db_ans;?></p>
           </header>
           <form action="./assets/php/userRegister.php" method="POST" enctype="multipart/form-data">
             <label for="user">Nome</label>
@@ -85,34 +87,28 @@
           <section>
             <h4>Seções do site</h4>
             <ul class="alt">
-              <li><a href="#">Adiministração</a></li>
-              <li><a href="#">Serviços</a></li>
-              <li><a href="#">Nossos Clientes</a></li>
-              <li><a href="#">Contato</a></li>
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./news.php">Notícias</a></li>
+              <li><a href="./client_area.html">Área do Cliente</a></li>
+              <li><a href="./contact.php">Contato</a></li>
             </ul>
           </section>
           <section>
             <h4>Redes Sociais</h4>
             <ul class="plain">
               <li>
-                <a href="#"><i class="icon fa-twitter">&nbsp;</i>Twitter</a>
-              </li>
-              <li>
-                <a href="#"><i class="icon fa-facebook">&nbsp;</i>Facebook</a>
-              </li>
-              <li>
-                <a href="#"><i class="icon fa-instagram">&nbsp;</i>Instagram</a>
-              </li>
-              <li>
-                <a href="#"><i class="icon fa-github">&nbsp;</i>Github</a>
+                <a
+                  href="https://www.facebook.com/DS-Work-ADM-e-Consultoria-111090494085157"
+                  ><i class="icon fa-facebook">&nbsp;</i>Facebook</a
+                >
               </li>
             </ul>
           </section>
         </div>
         <div class="copyright">
-          &copy; 2013 DS WORK LTDA. Photos
+          &copy; 2021 DS WORK LTDA. Photos
           <a href="https://unsplash.co">Unsplash</a>, Video
-          <a href="https://coverr.co">Coverr</a>.
+          <a href="https://coverr.co">Coverr</a>, Template by templated.co.
         </div>
       </div>
     </footer>

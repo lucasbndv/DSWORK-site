@@ -13,11 +13,11 @@ $resultcheck = mysqli_affected_rows($con);
 
 if($resultcheck == 1){
    $db_ans = "Usuário cadastrado com sucesso";
-   header('location:../../acount_register.php?ans='.$db_ans);
+   header('location:../../acount_register.php?ans='.$db_ans.'&style=green;');
 }
 else{
     $db_ans = "Erro ao cadastrar usuário";
-    header('location:../../acount_register.php?ans='.$db_ans);
+    header('location:../../acount_register.php?ans='.$db_ans.'&style=red;');
 }
 
 ?>

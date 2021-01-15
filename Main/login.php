@@ -8,7 +8,7 @@
   <head>
   <?php 
   try{
-    $db_ans = $_GET['ans'];
+    $db_ans = @$_GET['ans'];
   }
   catch(Exception $e){
     $db_ans = " ";
@@ -35,9 +35,9 @@
       <nav id="nav_menu">
         <ul class="links">
           <li><a href="index.html">Home</a></li>
-          <li><a href="news.html">Notícias</a></li>
-          <li><a href="client_area.html">Área do Cliente</a></li>
-          <li><a href="contato.html">Contato</a></li>
+          <li><a href="news.php">Notícias</a></li>
+          <li><a href="client_area.html" >Área do Cliente</a></li>
+          <li><a href="contact.php">Contato</a></li>
         </ul>
       </nav>
     </header>
@@ -86,9 +86,9 @@
             <h4>Seções do site</h4>
             <ul class="alt">
               <li><a href="./index.html">Home</a></li>
-              <li><a href="./news.html">Notícias</a></li>
+              <li><a href="./news.php">Notícias</a></li>
               <li><a href="./client_area.html">Área do Cliente</a></li>
-              <li><a href="./contato.html">Contato</a></li>
+              <li><a href="./contact.php">Contato</a></li>
             </ul>
           </section>
           <section>
@@ -106,7 +106,7 @@
         <div class="copyright">
           &copy; 2021 DS WORK LTDA. Photos
           <a href="https://unsplash.co">Unsplash</a>, Video
-          <a href="https://coverr.co">Coverr</a>.
+          <a href="https://coverr.co">Coverr</a>, Template by templated.co.
         </div>
       </div>
     </footer>
